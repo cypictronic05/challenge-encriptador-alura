@@ -1,9 +1,4 @@
-//const encriptar = document.getElementById("bnt-encriptar");
-//const desencriptar = document.getElementById("bnt-desencriptar");
-//const copiar = document.getElementById("bnt-copiar");
-
 document.getElementById('btn-copiar').hidden = true;
-
 
 function encriptar()
 {
@@ -38,13 +33,8 @@ function encriptar()
 
 function copiar()
 {
-    //let texto = textFinal;
 	textoRespuesta.select();
-	//navigator.clipboard.writeText(texto.value);
-	//clipboard función no compatible con móviles
     try {
-        // Copiando el texto seleccionado
-        //copyToClipboard(textoRespuesta.value);
         copyToClipboard(textoRespuesta.value);
         textoInfo.innerHTML = 'Copiado!';
     } catch (err) {
@@ -55,9 +45,40 @@ function copiar()
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text)
         .then(() => {
-            console.log('Texto copiado al portapapeles');
+            alert('Texto copiado al portapapeles');
         })
         .catch(err => {
-            console.error('Error al copiar al portapapeles: ', err);
+            alert('Error al copiar al portapapeles: ', err);
         });
+}
+
+function desencriptar()
+{
+    let texto = document.getElementById("texto");
+    let textoRespuesta = document.getElementById("textoRespuesta");
+    let textoInfo = document.getElementById("textoInfo");
+
+    let textoDado = texto.value.toLowerCase();
+    console.log(textoDado);
+    let textoConvertido = textoDado
+        .replace(/enter/gi,"e")
+        .replace(/imes/gi,"i")
+        .replace(/ai/gi,"a")
+        .replace(/ober/gi,"o")
+        .replace(/ufat/gi,"u");
+
+    console.log(textoDado);    
+
+    if(textoDado != "")
+    {
+        textoRespuesta.value  = textoConvertido;  
+        textoInfo.textContent = "Texto desencriptado con éxito";
+    }else{
+         alert("Ingrese texto para desencriptar");
+    }
+
+    document.getElementById('btn-copiar').hidden = false;
+    document.getElementById('munheco').hidden = true;
+    
+
 }
