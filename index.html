@@ -4,17 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador y Desencriptador</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        
+        <img src="./img/alura.svg" alt="Logo de Alura">
     </header>
     <main>
+        <article class="contenedor">
+            <section class="izquierda">
+                <textarea class="texto" id="texto" placeholder="Ingrese el texto aquí"></textarea>
+
+                <span class="info">
+                    <img src="./img/!.svg" alt="icono de exclamación" width="16px" height="16px">
+                    <p>Solo letras minúsculas y sin acentos</p>
+                </span>
+
+                <div class="botones">
+                    <button id="btn-encriptar"  type="button" class="btn-encriptar" onclick="encriptar()">Encriptar</button>
+                    <button id="btn-desencriptar"  type="button" class="btn-desencriptar" onclick="desencriptar()">Desencriptar</button>
+                </div>
+            </section>
+
+            <section class="derecha">
+                <img src="./img/munheco.svg" alt="muñeco" id="munheco">
+                <textarea id="textoRespuesta" class="textoRespuesta" placeholder="Ningún mensaje fue encontrado"></textarea>
+                <p id="textoInfo" class="textoInfo">Ingresa el texto que desees encriptar o desencriptar.</p>
+                <button id="btn-copiar" type="button" class="btn-copiar" onclick="copiar()">Copiar</button>
+
+            </section>
+
+        </article>
 
     </main>
     <footer>
-
+        <p>Desarrollado por <a href="https://www.instagram.com/cypictronic/"  target="_blank">Cypictronic</a></p>
     </footer>
-    
+    <script src="app.js"></script>
 </body>
 </html>
