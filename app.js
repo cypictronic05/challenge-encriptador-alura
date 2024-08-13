@@ -38,18 +38,26 @@ function encriptar()
 
 function copiar()
 {
-    let texto = textFinal;
+    //let texto = textFinal;
 	textoRespuesta.select();
 	//navigator.clipboard.writeText(texto.value);
 	//clipboard función no compatible con móviles
-	alert("Texto Copiado");
     try {
         // Copiando el texto seleccionado
-        let exito = Document.execCommand('copy');
-  
-        if(exito) respuesta.innerHTML = 'Copiado!';
-        else respuesta.innerHTML = 'No se pudo copiar!';
+        //copyToClipboard(textoRespuesta.value);
+        copyToClipboard(textoRespuesta.value);
+        textoInfo.innerHTML = 'Copiado!';
     } catch (err) {
-        respuesta.innerHTML = 'Navegador no soportado!';
+        textoInfo.innerHTML = 'Navegador no soportado!';
     }    
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            console.log('Texto copiado al portapapeles');
+        })
+        .catch(err => {
+            console.error('Error al copiar al portapapeles: ', err);
+        });
 }
