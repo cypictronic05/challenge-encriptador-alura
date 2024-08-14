@@ -1,4 +1,5 @@
 document.getElementById('btn-copiar').hidden = true;
+document.getElementById('btn-reset').hidden = true;
 
 function encriptar()
 {
@@ -7,15 +8,14 @@ function encriptar()
     let textoInfo = document.getElementById("textoInfo");
 
     let textoDado = texto.value.toLowerCase();
-    console.log(textoDado);
+    //console.log(textoDado);
     let textoConvertido = textoDado
         .replace(/e/gi,"enter")
         .replace(/i/gi,"imes")
         .replace(/a/gi,"ai")
         .replace(/o/gi,"ober")
         .replace(/u/gi,"ufat");
-
-    console.log(textoDado);    
+    
 
     if(textoDado != "")
     {
@@ -26,9 +26,9 @@ function encriptar()
     }
 
     document.getElementById('btn-copiar').hidden = false;
+    document.getElementById('btn-reset').hidden = false;
     document.getElementById('munheco').hidden = true;
     
-
 }
 
 function copiar()
@@ -78,6 +78,7 @@ function desencriptar()
     }
 
     document.getElementById('btn-copiar').hidden = false;
+    document.getElementById('btn-reset').hidden = false;
     document.getElementById('munheco').hidden = true;
     
 
