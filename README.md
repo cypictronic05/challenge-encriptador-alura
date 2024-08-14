@@ -47,7 +47,7 @@ Presiona el Botón "Encriptar". Si el texto solo contiene minúsculas y espacios
 
 ![Encriptador en Desktop](/img/encriptado.png)
 
-POr su parte en caso de que el texto no este correcto mostrara el siguiente mensaje "alert()"
+Por su parte en caso de que el texto no este correcto mostrará el siguiente mensaje "alert()"
 
 ![Encriptador en Desktop](/img/error.png)
 
@@ -66,5 +66,16 @@ presiono desencriptar, y se debe obtener la frase original encriptada
 Finalmente, se puede presionar el boton de Limpiar, para regresar al inicio
 
 ![Encriptador en Desktop](/img/al-presionar-limpiar.png)
+
+### Versiones Desktop, Tablet y Smartphone
+
+![Desktop](/img/Desktop.png)
+
+
+![Tablet](/img/ipad-mini.png)
+
+
+![Smartphone](/img/iphone-SE.png)
+
 
 Elaborado por  simesmobern vimestrimesaigober

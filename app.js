@@ -12,7 +12,6 @@ function encriptar()
     let textoConvertido="";
     if(validarTexto(texto.value))
     {
-        console.log(texto.value);
         textoConvertido = texto.value
             .replace(/e/gi,"enter")
             .replace(/i/gi,"imes")
@@ -69,7 +68,6 @@ function desencriptar()
     textoConvertido="";
     if(validarTexto(texto.value))
     {
-        console.log(texto.value);
         textoConvertido = texto.value
             .replace(/enter/gi,"e")
             .replace(/imes/gi,"i")
@@ -95,7 +93,6 @@ function desencriptar()
 
 function resetear()
 {
-    console.log("Copiar");
     texto.value = '';
     textoRespuesta.value = '';
     textoInfo.innerHTML = 'Ingresa el texto que desees encriptar o desencriptar.';
