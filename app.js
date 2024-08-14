@@ -7,33 +7,38 @@ let textoInfo = document.getElementById("textoInfo");
 let texto = document.getElementById("texto");
 
 
-
-
 function encriptar()
 {
-
-    let textoDado = texto.value.toLowerCase();
-    //console.log(textoDado);
-    let textoConvertido = textoDado
-        .replace(/e/gi,"enter")
-        .replace(/i/gi,"imes")
-        .replace(/a/gi,"ai")
-        .replace(/o/gi,"ober")
-        .replace(/u/gi,"ufat");
-    
-
-    if(textoDado != "")
+    let textoConvertido="";
+    if(validarTexto(texto.value))
     {
-        textoRespuesta.value  = textoConvertido;  
-        textoInfo.textContent = "Texto encriptado con éxito";
-    }else{
-         alert("Ingrese texto para encriptar");
+        console.log(texto.value);
+        textoConvertido = texto.value
+            .replace(/e/gi,"enter")
+            .replace(/i/gi,"imes")
+            .replace(/a/gi,"ai")
+            .replace(/o/gi,"ober")
+            .replace(/u/gi,"ufat");
+
+
+            if(textoConvertido != "")
+                {
+                    textoRespuesta.value  = textoConvertido;  
+                    textoInfo.textContent = "Texto encriptado con éxito";
+                    document.getElementById('btn-copiar').hidden = false;
+                    document.getElementById('btn-reset').hidden = false;
+                    document.getElementById('munheco').hidden = true;      
+                }else{
+                     alert("Ingrese texto para encriptar");
+                }
+
+        
     }
 
-    document.getElementById('btn-copiar').hidden = false;
-    document.getElementById('btn-reset').hidden = false;
-    document.getElementById('munheco').hidden = true;
-    
+
+
+
+
 }
 
 function copiar()
@@ -50,7 +55,8 @@ function copiar()
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text)
         .then(() => {
-            alert('Texto copiado al portapapeles');
+            //alert('Texto copiado al portapapeles');
+            texto.select();
         })
         .catch(err => {
             alert('Error al copiar al portapapeles: ', err);
@@ -60,28 +66,31 @@ function copyToClipboard(text) {
 function desencriptar()
 {
 
-    let textoDado = texto.value.toLowerCase();
-    let textoConvertido = textoDado
-        .replace(/enter/gi,"e")
-        .replace(/imes/gi,"i")
-        .replace(/ai/gi,"a")
-        .replace(/ober/gi,"o")
-        .replace(/ufat/gi,"u");
-
-
-    if(textoDado != "")
+    textoConvertido="";
+    if(validarTexto(texto.value))
     {
-        textoRespuesta.value  = textoConvertido;  
-        textoInfo.textContent = "Texto desencriptado con éxito";
-    }else{
-         alert("Ingrese texto para desencriptar");
+        console.log(texto.value);
+        textoConvertido = texto.value
+            .replace(/enter/gi,"e")
+            .replace(/imes/gi,"i")
+            .replace(/ai/gi,"a")
+            .replace(/ober/gi,"o")
+            .replace(/ufat/gi,"u");
+
+
+            if(textoConvertido != "")
+                {
+                    textoRespuesta.value  = textoConvertido;  
+                    textoInfo.textContent = "Texto desencriptado con éxito";
+                    document.getElementById('btn-copiar').hidden = false;
+                    document.getElementById('btn-reset').hidden = false;
+                    document.getElementById('munheco').hidden = true;    
+                }else{
+                     alert("Ingrese texto para desencriptar");
+                }
+
+        
     }
-
-    document.getElementById('btn-copiar').hidden = false;
-    document.getElementById('btn-reset').hidden = false;
-    document.getElementById('munheco').hidden = true;
-    
-
 }
 
 function resetear()
@@ -93,4 +102,16 @@ function resetear()
     document.getElementById('btn-copiar').hidden = true;
     document.getElementById('btn-reset').hidden = true;
     document.getElementById('munheco').hidden = false;    
+}
+
+function validarTexto(dato) {
+    // Expresión regular que solo permite letras minúsculas sin acentos
+    let regex = /^[a-z\s]*$/;
+
+    if (!regex.test(dato)) {
+        alert("El texto contiene caracteres no permitidos. Solo se permiten letras minúsculas sin acentos, números y espacios.");
+        return false; // Evita que el formulario se envíe
+    }
+
+    return true; // Texto OK
 }
