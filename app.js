@@ -26,18 +26,14 @@ function encriptar()
                     textoInfo.textContent = "Texto encriptado con éxito";
                     document.getElementById('btn-copiar').hidden = false;
                     document.getElementById('btn-reset').hidden = false;
-                    document.getElementById('munheco').hidden = true;      
+                    document.getElementById('munheco').hidden = true;     
+                    document.getElementById("textoRespuesta").style.lineHeight = 1.5;
+                    document.getElementById("textoRespuesta").style.color = getComputedStyle(document.documentElement).getPropertyValue('--color-grey').trim();
+                    //document.getElementsByClassName("derecha").style.justifyContent = "flex-start"; --Dando error---
                 }else{
                      alert("Ingrese texto para encriptar");
                 }
-
-        
     }
-
-
-
-
-
 }
 
 function copiar()
@@ -86,7 +82,6 @@ function desencriptar()
                 }else{
                      alert("Ingrese texto para desencriptar");
                 }
-
         
     }
 }

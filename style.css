@@ -122,13 +122,13 @@ body {
     font-family: "Inter";
     font-weight: bold;
     font-size: 1.5rem; /* 16 px*/
-    /* line-height: 120%; */ /*Default Desktop*/
-	line-height: 150%;/*On Encriptar*/
+    line-height: 120%; /*Default Desktop*/
+	/*line-height: 150%; *//*On Encriptar*/
     text-align: center;
 	width: 100%;
 	height: 100%;
-    /*color: var(--color-greyDark);*/ /*Default Desktop*/
-	color: var(--color-grey); /*On Encriptar*/
+    color: var(--color-greyDark); /*Default Desktop*/
+	/*color: var(--color-grey);*/ /*On Encriptar*/
     /*border-color: white;*/
 	background-color: var(--color-lightBlue2);
 	border: none;
@@ -138,7 +138,7 @@ body {
     font-family: "Inter";
     font-weight: 400;
     font-size: 1rem; /* 16 px*/
-    line-height: 150%;
+    line-height: 1.5;
     text-align: center;   
     color: var(--color-grey); 
 }
@@ -170,7 +170,6 @@ footer{
 		margin: auto 40px auto auto;
 		align-items: end;
 		flex-wrap: wrap;
-
 	}
 
 }
@@ -210,9 +209,6 @@ footer{
 /* Estilos para Smartphones (375x933) */
 @media (max-width: 375px) {
 	.contenedor{
-		/* margin: auto 40px auto auto;
-		align-items: end;
-		flex-wrap: wrap; */
 		display: grid;
 		grid-template-rows: 2fr;
 		grid-template-columns: 1fr;
@@ -237,5 +233,9 @@ footer{
 		padding: .8rem;
 		flex-wrap: wrap;
 		gap: .8rem;    
+	}	
+
+	footer{
+		text-align: center;
 	}	
 }
