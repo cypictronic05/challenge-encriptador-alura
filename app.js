@@ -1,11 +1,16 @@
 document.getElementById('btn-copiar').hidden = true;
 document.getElementById('btn-reset').hidden = true;
 
+//Variables globales, también usadas en cada función
+let textoRespuesta = document.getElementById("textoRespuesta");
+let textoInfo = document.getElementById("textoInfo");
+let texto = document.getElementById("texto");
+
+
+
+
 function encriptar()
 {
-    let texto = document.getElementById("texto");
-    let textoRespuesta = document.getElementById("textoRespuesta");
-    let textoInfo = document.getElementById("textoInfo");
 
     let textoDado = texto.value.toLowerCase();
     //console.log(textoDado);
@@ -54,12 +59,8 @@ function copyToClipboard(text) {
 
 function desencriptar()
 {
-    let texto = document.getElementById("texto");
-    let textoRespuesta = document.getElementById("textoRespuesta");
-    let textoInfo = document.getElementById("textoInfo");
 
     let textoDado = texto.value.toLowerCase();
-    console.log(textoDado);
     let textoConvertido = textoDado
         .replace(/enter/gi,"e")
         .replace(/imes/gi,"i")
@@ -67,7 +68,6 @@ function desencriptar()
         .replace(/ober/gi,"o")
         .replace(/ufat/gi,"u");
 
-    console.log(textoDado);    
 
     if(textoDado != "")
     {
@@ -82,4 +82,15 @@ function desencriptar()
     document.getElementById('munheco').hidden = true;
     
 
+}
+
+function resetear()
+{
+    console.log("Copiar");
+    texto.value = '';
+    textoRespuesta.value = '';
+    textoInfo.innerHTML = 'Ingresa el texto que desees encriptar o desencriptar.';
+    document.getElementById('btn-copiar').hidden = true;
+    document.getElementById('btn-reset').hidden = true;
+    document.getElementById('munheco').hidden = false;    
 }
